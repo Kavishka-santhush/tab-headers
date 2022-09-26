@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        button {
+            border: none;
+            width: 24.6%;
+            margin: 0px;
+            height: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            display: inline;
+            cursor: pointer;
+        }
+
+        .tabs {
+            padding: 0px;
+            margin: 0px;
+            height: 50px;
+        }
+
+        .container {
+            border: white 2px solid;
+            padding: 0px;
+            margin: 0px;
+            height: 500px;
+        }
+
+        .london {
+            background-color: red;
+        }
+
+        .paris {
+            background-color: green;
+        }
+
+        .tokyo {
+            background-color: gray;
+        }
+
+        .oslo {
+            background-color: orange;
+        }
+
+        .des {
+            text-align: center;
+            position: relative;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab london">London</button>
+            <button class="tab paris">Paris</button>
+            <button class="tab tokyo">Tokyo</button>
+            <button class="tab oslo">Oslo</button>
+        </div>
+        <div class="des">
+            <h1 id="heading"></h1>
+            <p id="des"></p>
+        </div>
+    </div>
+    <script>
+        background = document.getElementsByClassName("container")[0];
+        background.style.backgroundColor = "red";
+        heading = document.getElementById("heading");
+        des = document.getElementById("des");
+        tabs = document.getElementsByClassName("tab");
+
+        heading.innerHTML = "London";
+        des.innerHTML = "London is the capital of england";
+
+
+        colors = { London: "red", Paris: "green", Tokyo: "gray", Oslo: "orange" };
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener("click", function () {
+                background.style.backgroundColor = colors[this.innerHTML];
+            });
+        }
+    </script>
+</body>
+
+</html>
